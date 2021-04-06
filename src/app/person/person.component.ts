@@ -33,6 +33,7 @@ export class PersonComponent implements OnInit {
 
   private loadData(pageIndex: number, pageSize: number){
     this.personService.getPerson(null, pageIndex, pageSize).subscribe(data => {
+      this.personLenght = data.totalResults;
       this.dataSource = data.items;
     })
   }
