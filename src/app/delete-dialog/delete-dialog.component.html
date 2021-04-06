@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>Delete {{dialogMessage}}</h1>
+<div mat-dialog-content>Are you sure you want to delete {{dialogMessage}}?</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="closeDialog()">Close</button>
+  <button mat-button (click)="delete()">Ok</button>
+</div>
