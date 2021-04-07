@@ -1,33 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PersonFormComponent } from './person-form/person-form.component';
 import { PersonComponent } from './person/person.component';
-import { StudentFormComponent } from './student-form/student-form.component';
-import { UniversityFormComponent } from './university-form/university-form.component';
-import { UniversityComponent } from './university/university.component';
 
 const routes: Routes = [{
   path: 'person',
   component:PersonComponent,
 },
 {
-  path: 'studentform',
-  component:StudentFormComponent,
+  path: 'personform',
+  component:PersonFormComponent,
 },
 {
-  path: 'students/edit/:id',
-  component:StudentFormComponent,
+  path: 'aboutus',
+  component:AboutUsComponent,
 },
 {
-  path: 'universities',
-  component:UniversityComponent,
-},
-{
-  path:'universityform',
-  component:UniversityFormComponent,
-},
-{
-  path:'universities/edit/:id',
-  component:UniversityFormComponent,
+  path: 'person/edit/:id',
+  component:PersonFormComponent,
 }];
 
 @NgModule({

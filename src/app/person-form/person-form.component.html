@@ -1,0 +1,43 @@
+<p>Add Person</p>
+<form [formGroup]="personForm" class="example-form" (ngSubmit) = "onSubmit()">
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="Name">
+      </mat-form-field>
+      <div class = "validation-error" *ngIf = "submited && personForm.controls.Name">
+        <div *ngIf = "personForm.controls.Name.errors && personForm.controls.Name.errors.required">
+          Name is required
+        </div>
+        <div *ngIf = "personForm.controls.Name.errors && personForm.controls.Name.errors.maxlength">
+          Name is too long
+        </div>
+      </div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="sophie@example.com" formControlName="Email">
+      </mat-form-field>
+      <div class = "validation-error" *ngIf = "submited && personForm.controls.Email">
+        <div *ngIf = "personForm.controls.Email.errors && personForm.controls.Email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf = "personForm.controls.Email.errors && personForm.controls.Email.errors.maxlength">
+          Email is too long
+        </div>
+      </div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Phone" formControlName="Phone">
+      </mat-form-field>
+      <div class = "validation-error" *ngIf = "submited && personForm.controls.Phone">
+        <div *ngIf = "personForm.controls.Phone.errors && personForm.controls.Phone.errors.required">
+          Phone is required.
+        </div>
+        <div *ngIf = "personForm.controls.Phone.errors && personForm.controls.Phone.errors.maxlength">
+          Phone is too long
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button color="accent" >Save</button>
+        <a routerLink="/person" class="btn btn-link btn-cancel">cancel</a>
+      </div>
+</form>
